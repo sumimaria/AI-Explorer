@@ -1085,7 +1085,7 @@
     parent.querySelectorAll('.panel').forEach(x=>{if(x!==p)x.classList.remove('open')});
     parent.querySelectorAll('.card-btn').forEach(b=>b.classList.remove('active'));
     if(!open){p.classList.add('open');btn.classList.add('active');setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}),50)}
-    else{p.classList.remove('open');btn.classList.remove('active')}
+    else{p.classList.remove('open');btn.classList.remove('active')} 
   }
 </script>
 </body>
