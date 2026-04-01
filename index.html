@@ -11,6 +11,7 @@
     --ai:#ff6b6b;--ml:#ffd93d;--dl:#6bcb77;--nlp:#4d96ff;
     --cv:#c77dff;--rl:#ff9a3c;--sup:#00d4aa;--unsup:#ff6b9d;
     --semi:#a8edea;--text:#f0f0f8;--muted:#8888aa;--radius:18px;
+    --letsGO:#9952db;--text:#f0f0f8;--muted:#8888aa;--radius:18px;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
@@ -353,10 +354,12 @@
       <div class="sublabel">Mix of labelled and unlabelled data</div>
       <span class="tag" style="background:var(--semi);color:#0a0a12">Semi</span>
     </button>
-     <button class="card-btn" style="--accent:var(--Lets GO !!);--accent-glow:#a8edea44" onclick="window.location.href='ml_learning.html'">
-      <span class="icon"></span><div class="label">Learn ML</div>
-      <div class="sublabel"></div>
-      <span class="tag" style="background:var(--semi);color:#177034">Semi</span>
+     <!-- ML LAB LINK CARD -->
+    <button class="card-btn ml-lab-card" style="--accent:#ffd93d;--accent-glow:#ffd93d55" onclick="window.open('ml_learning2.html','_blank')">
+      <span class="icon">🧪</span>
+      <div class="label">ML Lab <span style="font-size:.7rem;vertical-align:middle;opacity:.7">↗</span></div>
+      <div class="sublabel">Interactive experiments, live code demos &amp; Python examples</div>
+      <span class="tag" style="background:linear-gradient(135deg,#ffd93d,#fb923c);color:#0a0a12">Explore Now</span>
     </button>
   </div>
 
