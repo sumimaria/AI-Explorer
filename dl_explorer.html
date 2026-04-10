@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,7 +11,6 @@
     --ai:#ff6b6b;--ml:#ffd93d;--dl:#6bcb77;--nlp:#4d96ff;
     --cv:#c77dff;--rl:#ff9a3c;--sup:#00d4aa;--unsup:#ff6b9d;
     --semi:#a8edea;--text:#f0f0f8;--muted:#8888aa;--radius:18px;
-    --letsGO:#9952db;--text:#f0f0f8;--muted:#8888aa;--radius:18px;
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
@@ -37,7 +36,7 @@
   @keyframes pulse-ai{0%,100%{box-shadow:0 0 40px #ff6b6b55,0 8px 32px #0006}50%{box-shadow:0 0 80px #ff6b6b99,0 8px 32px #0006}}
 
   .panel{background:var(--card);border:1px solid #ffffff0f;border-radius:var(--radius);padding:28px 32px;margin-top:10px;display:none}
-  .panel.open{display:block !important;opacity: 1;animation:fadeSlide .4s ease forwards}
+  .panel.open{display:block;animation:fadeSlide .4s ease forwards}
   @keyframes fadeSlide{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
   .panel h2{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:10px}
   .panel p{color:#cccce0;line-height:1.8;font-size:.97rem}
@@ -66,6 +65,12 @@
   .diagram-block svg{display:block;margin:0 auto;max-width:100%;height:auto}
   .diagram-caption{text-align:center;font-size:.76rem;color:var(--muted);margin-top:8px;font-style:italic}
 
+  .ml-lab-card{background:linear-gradient(135deg,#1a1a0a,#2a200a) !important;border-color:#ffd93d44 !important}
+  .ml-lab-card::after{content:'';position:absolute;inset:0;border-radius:var(--radius);background:linear-gradient(135deg,#ffd93d08,#fb923c12);pointer-events:none}
+  .ml-lab-card:hover{border-color:#ffd93d !important;box-shadow:0 0 32px #ffd93d55,0 0 64px #ffd93d22 !important;transform:translateY(-6px) !important}
+  .ml-lab-card .label{background:linear-gradient(135deg,#ffd93d,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .ml-lab-card .icon{animation:lab-bounce 2.2s ease-in-out infinite}
+  @keyframes lab-bounce{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-5px) rotate(5deg)}}
   .sub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-top:10px}
   .sub-card{background:#0f0f1e;border:1px solid #ffffff11;border-radius:12px;padding:16px 14px;border-left:3px solid var(--accent)}
   .sub-card .sub-icon{font-size:1.4rem;margin-bottom:6px;display:block}
@@ -354,8 +359,8 @@
       <div class="sublabel">Mix of labelled and unlabelled data</div>
       <span class="tag" style="background:var(--semi);color:#0a0a12">Semi</span>
     </button>
-     <!-- ML LAB LINK CARD -->
-    <button class="card-btn ml-lab-card" style="--accent:#ffd93d;--accent-glow:#ffd93d55" onclick="window.open('ml_learning2.html','_blank')">
+    <!-- ML LAB LINK CARD -->
+    <button class="card-btn ml-lab-card" style="--accent:#ffd93d;--accent-glow:#ffd93d55" onclick="window.open('ml_learning_portal.html','_blank')">
       <span class="icon">🧪</span>
       <div class="label">ML Lab <span style="font-size:.7rem;vertical-align:middle;opacity:.7">↗</span></div>
       <div class="sublabel">Interactive experiments, live code demos &amp; Python examples</div>
@@ -738,11 +743,29 @@
     <div class="sub-card" style="--accent:#7209b7"><span class="sub-icon">🧬</span><div class="sub-label">LSTM</div><div class="sub-desc">Long Short-Term Memory — RNN with memory gates for long sequences.</div></div>
     <div class="sub-card" style="--accent:#ffd166"><span class="sub-icon">⚡</span><div class="sub-label">Transformer</div><div class="sub-desc">Attention-based architecture powering GPT, Claude, BERT, Gemini.</div></div>
     <div class="sub-card" style="--accent:#06d6a0"><span class="sub-icon">🎨</span><div class="sub-label">GAN</div><div class="sub-desc">Two networks compete — generator vs discriminator. Creates realistic images.</div></div>
-    <div class="sub-card" style="--accent:#06d6a0">
-       <button class="card-btn ml-lab-card" style="--accent:#ffd93d;--accent-glow:#ffd93d55" onclick="window.open('dl_learning.html','_blank')">
-       <span class="sub-icon">🧪</span><div class="sub-label">DL Lab</div><div class="sub-desc">Interactive experiments, live code demos & Python examples</div>
-       </button>
   </div>
+
+  <!-- DL LAB LINK -->
+  <div style="margin-top:22px">
+    <button onclick="window.open('dl_learning_portal.html','_blank')" style="width:100%;cursor:pointer;border:none;outline:none;text-align:left;background:linear-gradient(135deg,#0a1a0e,#0e1a12);border-radius:var(--radius);padding:22px 26px;border:2px solid #6bcb7733;transition:all .22s;position:relative;overflow:hidden;display:flex;align-items:center;gap:20px"
+      onmouseover="this.style.borderColor='#6bcb77';this.style.boxShadow='0 0 36px #6bcb7744,0 0 72px #6bcb7718';this.style.transform='translateY(-3px)'"
+      onmouseout="this.style.borderColor='#6bcb7733';this.style.boxShadow='none';this.style.transform='translateY(0)'">
+      <span style="font-size:2.4rem;animation:dl-pulse 2s ease-in-out infinite alternate">🧠</span>
+      <div style="flex:1">
+        <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;background:linear-gradient(135deg,#6bcb77,#4cc9f0);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Deep Learning Lab ↗</div>
+        <div style="font-size:.82rem;color:#4a7a5a;margin-top:4px">Hands-on experiments with ANN, CNN, RNN, LSTM &amp; Transformers — live Python code demos</div>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+          <span style="font-size:.65rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:100px;background:#6bcb7722;border:1px solid #6bcb7755;color:#6bcb77">ANN</span>
+          <span style="font-size:.65rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:100px;background:#4cc9f022;border:1px solid #4cc9f055;color:#4cc9f0">CNN</span>
+          <span style="font-size:.65rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:100px;background:#f7258522;border:1px solid #f7258555;color:#f72585">RNN</span>
+          <span style="font-size:.65rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:100px;background:#ffd16622;border:1px solid #ffd16655;color:#ffd166">LSTM</span>
+          <span style="font-size:.65rem;font-family:'Syne',sans-serif;font-weight:700;letter-spacing:1px;padding:2px 9px;border-radius:100px;background:#ff9a3c22;border:1px solid #ff9a3c55;color:#ff9a3c">Transformer</span>
+        </div>
+      </div>
+      <span style="font-size:1.8rem;color:#6bcb7755">›</span>
+    </button>
+  </div>
+  <style>@keyframes dl-pulse{from{transform:scale(1) rotate(-5deg)}to{transform:scale(1.12) rotate(5deg)}}</style>
 </div>
 
 <!-- ====== NLP ====== -->
@@ -1090,77 +1113,15 @@
     document.querySelectorAll('#panel-ai').forEach(x=>x.classList.remove('open'));
     if(!open){p.classList.add('open');setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}),50)}
   }
-
-   function toggleCard(id,btn){
+  function toggleCard(id,btn){
     const p=document.getElementById(id);if(!p)return;
     const open=p.classList.contains('open');
-    const enclosingPanel=btn.closest('.panel');
-    if(enclosingPanel){
-      // Nested: close sibling panels inside the parent panel only
-      enclosingPanel.querySelectorAll('.panel').forEach(x=>{if(x!==p)x.classList.remove('open')});
-      enclosingPanel.querySelectorAll('.card-btn').forEach(b=>b.classList.remove('active'));
-    } else {
-      // Top-level (NLP, CV, ML, DL, RL): only close other top-level panels
-      console.log("Closing other top-level panels");
-      document.querySelectorAll('main > .panel').forEach(x=>{if(x!==p)x.classList.remove('open')});
-      document.querySelectorAll('main > .section-title ~ .cards-grid .card-btn, main > .cards-grid .card-btn').forEach(b=>b.classList.remove('active'));
-    }
+    const parent=btn.closest('.panel')||document.querySelector('main');
+    parent.querySelectorAll('.panel').forEach(x=>{if(x!==p)x.classList.remove('open')});
+    parent.querySelectorAll('.card-btn').forEach(b=>b.classList.remove('active'));
     if(!open){p.classList.add('open');btn.classList.add('active');setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}),50)}
     else{p.classList.remove('open');btn.classList.remove('active')}
   }
-
-//   function toggleCard(id, btn) {
-//   console.log("Attempting to toggle:", id);
-//   const p = document.getElementById(id);
-  
-//   if (!p) {
-//     console.error("Panel not found with ID:", id);
-//     return;
-//   }
-
-//   const isOpen = p.classList.contains('open');
-
-//   // 1. Close all other panels
-//   document.querySelectorAll('.panel').forEach(x => {
-//     if (x !== p) x.classList.remove('open');
-//   });
-
-//   // 2. Remove 'active' class from ALL buttons globally
-//   document.querySelectorAll('.card-btn').forEach(b => b.classList.remove('active'));
-
-//   // 3. Toggle the clicked panel
-//   if (!isOpen) {
-//     p.classList.add('open');
-//     btn.classList.add('active');
-    
-//     // Slight delay to allow display:block to kick in before scrolling
-//     setTimeout(() => {
-//       p.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-//     }, 50);
-//   } else {
-//     p.classList.remove('open');
-//     btn.classList.remove('active');
-//   }
-// }
-  // function toggleCard(id,btn){
-  //   console.log("In toggle card:",id, btn);
-  //   const p=document.getElementById(id);if(!p)return;
-  //   const open=p.classList.contains('open');
-  //   const parent=btn.closest('.panel')||document.querySelector('main');
-  //   document.querySelectorAll('.panel').forEach(x => { if(x !== p) x.classList.remove('open'); });
-  //   //parent.querySelectorAll('.panel').forEach(x=>{if(x!==p)x.classList.remove('open')});
-  //   parent.querySelectorAll('.card-btn').forEach(b=>b.classList.remove('active'));
-  //   if(!open){p.classList.add('open');btn.classList.add('active');setTimeout(()=>p.scrollIntoView({behavior:'smooth',block:'nearest'}),50)}
-  //   else{p.classList.remove('open');btn.classList.remove('active')} 
-  // }
-   // This prevents any input or slider from closing your panels
-  // document.querySelectorAll('.panel').forEach(panel => {
-  //   panel.addEventListener('click', (e) => {
-  //     // If the user is clicking an input, slider, or button inside the panel, 
-  //     // stop the event from reaching the 'toggle' logic.
-  //     e.stopPropagation();
-  //   });
-  // });
 </script>
 </body>
 </html>

@@ -1326,6 +1326,7 @@ function renderQuestion() {
 function answerQ(chosen) {
   if(qAnswered) return; qAnswered=true;
   const q = quizData[qIdx];
+  console.log("Clicked");
   const btns = document.querySelectorAll('#quiz-opts button');
   btns.forEach((b,i) => {
     b.style.pointerEvents='none';
@@ -1335,9 +1336,10 @@ function answerQ(chosen) {
   });
   if(chosen===q.ans) qScore++;
   $('quiz-btns').innerHTML = `<button class="btn btn-primary" onclick="nextQ()">${qIdx+1<quizData.length?'Next Question →':'See Results 🎯'}</button>`;
+    console.log("answerQended");
 }
 
-function nextQ() { qIdx++; qAnswered=false; renderQuestion(); }
+function nextQ() { console.log("NextQ "); qIdx++; qAnswered=false; renderQuestion(); }
 
 function showQuizResult() {
   const pct = Math.round(qScore/quizData.length*100);
